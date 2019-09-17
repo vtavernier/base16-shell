@@ -4,9 +4,10 @@ if [ -s $BASH ]; then
 elif [ -s $ZSH_NAME ]; then
     file_name=${(%):-%x}
 fi
-script_dir=$(cd $(dirname $file_name) && pwd)
+script_dir=$HOME/.base16
+base_dir=$(cd $(dirname $file_name) && pwd)
 
-. $script_dir/realpath/realpath.sh
+. $base_dir/realpath/realpath.sh
 
 if [ -f ~/.base16_theme ]; then
   script_name=$(basename "$(realpath ~/.base16_theme)" .sh)
